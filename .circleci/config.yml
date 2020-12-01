@@ -122,14 +122,10 @@ jobs:
       - run:
            name: Heroku Deploy
            command: |
-             git push https://heroku:4b63ee1e-c8e2-4f3d-9950-1327f851ab83@git.heroku.com/.git main
+             git push https://heroku:4b63ee1e-c8e2-4f3d-9950-1327f851ab83@git.heroku.com/blooming-lowlands-99669.git main
       - run:
           name: Smoke Test
           command: echo todo
-      - run:
-           name: Deploy Master to Heroku
-           command: |
-             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/blooming-lowlands-99669.git master
 
 
 workflows:
