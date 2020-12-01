@@ -125,7 +125,12 @@ jobs:
              git push https://heroku:4b63ee1e-c8e2-4f3d-9950-1327f851ab83@git.heroku.com/blooming-lowlands-99669.git main
       - run:
           name: Smoke Test
-          command: echo todo
+          command:  |
+             HTTPCODE=`curl -s -o /dev/null -w "%{http_code}" https://$HEROKU_APP_NAME.herokuapp.com/`
+             if [ "$HTTPCODE" -ne 200 ];then
+                echo "heroku app not responding, failing deploy"
+                exit 1
+             fi
 
 
 workflows:
