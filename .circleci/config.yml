@@ -125,7 +125,7 @@ jobs:
              git push https://heroku:663e88ac-7c36-48ee-8ba0-aab66d5d5a44@git.heroku.com/.git main
       - run:
           name: Smoke Test
-          command: echo todo && false
+          command: echo todo
       - run:
            name: Deploy Master to Heroku
            command: |
